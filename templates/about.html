@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+{%block body%}
+    <h2 class="logo">{% trans "About Page" %}</h2>
+    <div >
+        <p>{% trans "Legend Book is designed to share famous people, famous events, and socialize with people. On the homepage, you can see the information shared by everyone. You can contact us with the social media mentioned below. . ." %}</p>
+    </div>
+    <ul class="social_media">
+        <li><a target="_blank" href="https://wa.me/qr/MVAYPDAPZEDSA1"><i style="color:green;" class="fa-brands fa-square-whatsapp"></i></a></li>
+        <li><a target="_blank" href="https://www.instagram.com/samedli_s?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i style="color:purple;" class="fa-brands fa-square-instagram"></i></a></li>
+        <li><a target="_blank" href="https://www.facebook.com/s.samedli7/"><i style="color:darkblue;" class="fa-brands fa-facebook"></i></a></li>
+        <li><a target="_blank" href="https://github.com/SamedliSamuray"><i  class="fa-brands fa-square-github"></i></a></li>
+    </ul>
+{%endblock body%}

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page is not found !</title>
+    <style>
+        .container{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+        .about{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: whitesmoke;
+            gap: 0px;
+            margin-top: 160px;
+            height: 400px;
+            width: 1000px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        .title{
+            font-size: 30px;
+        }
+        .emoji{
+            font-size: 60px;
+        }
+        .page{
+            display: flex;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="about">
+    <h1 class="title">Page not found..!!!</h1>
+    <p class="emoji">😕</p>
+    <p>We couldn't find the page you were looking for.</p>
+    <div class="page"><a href="http://127.0.0.1:8000/">Home</a><a href="http://127.0.0.1:8000/user/">My Profile</a></div>
+    <a href="javascript:history.back()">Return to previous page</a>
+
+    </div>
+</div>
+</body>
+</html>

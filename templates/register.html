@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+{%block body%}
+    
+<p>{% trans "Welcome to Legends Book" %}</p>
+    <form id="register_form" method='post'>
+        <h2>{% trans "Register" %}</h2>
+        {% csrf_token %}
+        {{form.as_p}}
+        <button id="register_btn" type="submit">{% trans "Register" %}</button>
+    </form>
+{%endblock body%}

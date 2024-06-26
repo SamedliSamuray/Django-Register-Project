@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load i18n %}
+{%block body%}
+<div class="back_div">
+<a href="javascript:history.back()" class="back"><i class="fa-solid fa-circle-arrow-left"></i></a>
+    <div class="posts_details">
+    <ul id="posts">
+      
+      <li class="post">
+                <div class="head">
+                <div class="header">
+                <a href=""><i class="fa-regular fa-circle-user"></i>
+                <h3>{{post.author}}</h3></a>
+                </div>
+                            <div class="delete">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                            
+                        </div>
+                        <div class="post_about">
+                            <h4 style="border-bottom:1px solid black">{{post.title}}</h4>
+                            <p>{{post.content|safe}}</p>
+                            <br>
+                            {% if post.image %}
+                                <img src="{{ post.image.url }}" alt="">
+                            {% endif%}
+                            <address>{{post.created_at}}</address>
+                        </div>
+        </li>
+       
+        
+    </ul>
+    <hr>
+<div class="comments_div">
+    <h3>{% trans "Comments" %}</h3>
+    <hr>
+    {% for comment in comments %}
+        <div class="comment">
+            <p><i class="fa-regular fa-circle-user"></i><strong>{{ comment.author }}</strong></p>
+            <p>{{ comment.content }}</p>
+            <u class="comment_date">{{ comment.created_at }}</u>
+        </div>
+    {% empty %}
+        <p>{% trans "There are no articles yet." %}</p>
+    {% endfor %}
+    <h3>{% trans "Comment" %}</h3>
+    <form class="share_post" method="post">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <button class="search_btn" type="submit">{% trans "Share" %}</button>
+    </form>
+</div>
+    
+
+</div>
+</div>
+
+
+{%endblock body%}
